@@ -52,8 +52,8 @@ config.action_mailer.smtp_settings = {
 
 
 
-   Paperclip.options[:command_path] = 'C:\Program Files\GnuWin32\bin'
-   #Paperclip.options[:command_path] = "/usr/local/bin/
+   #Paperclip.options[:command_path] = 'C:\Program Files\GnuWin32\bin'
+   Paperclip.options[:command_path] = "/usr/local/bin/
 
 
 end
