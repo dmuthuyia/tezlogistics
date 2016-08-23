@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
- has_many :products
-	has_many :comments, through: :products
+  has_many :products
+  has_many :comments, through: :products
   has_many :staffs
   has_many :reviews, through: :staffs
   # Include default devise modules. Others available are:
