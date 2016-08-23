@@ -1,0 +1,16 @@
+!!!
+%html
+%head
+
+%body
+
+	%header
+		.wrapper.clearfix
+			#logo= link_to "Tez", root_path
+			%nav
+				- if user_signed_in?
+					= link_to current_user.user_name, edit_user_registration_path
+					= link_to "New product", new_product_path, class: "button"
+				- else
+					= link_to "Sign in", new_user_session_path
+					= link_to "Sign up", new_user_registration_path, class: "button"

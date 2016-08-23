@@ -1,0 +1,48 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>
+
+
+<script>
+  $(document).ready(function(){
+    $('.carousel').carousel({
+      interval: 2000
+    });
+  });
+</script>
+
+
+<!--  Carousel - consult the Twitter Bootstrap docs at 
+      http://twitter.github.com/bootstrap/javascript.html#carousel -->
+<div id="this-carousel-id" class="carousel slide" data-ride="carousel"><!-- class of slide for animation -->
+  <div class="carousel-inner">
+    <div class="item active"><!-- class of active since it's the first item -->
+      <%= link_to image_tag('tezhome4b.png', alt: "Edit Entry"), root_path, class: 'trybsresponsepics'  %>
+      <div class="carousel-caption">
+        <p>Logistics</p>
+      </div>
+    </div>
+    <div class="item">
+       <%= link_to image_tag('personaloutdoorbanner4.png', alt: "Edit Entry"), root_path, class: 'trybsresponsepics'  %>
+      <div class="carousel-caption">
+        <p>Personal</p>
+      </div>
+    </div>
+    <div class="item">
+       <%= link_to image_tag('corporatebanner4.png', alt: "Edit Entry"), root_path, class: 'trybsresponsepics'  %>
+      <div class="carousel-caption">
+        <p>Corporate</p>
+      </div>
+    </div>
+    <div class="item">
+      <!-- <img src="http://placehold.it/1200x480" alt="" />-->
+       <%= link_to image_tag('householdbanner4.png', alt: "Edit Entry"), root_path, class: 'trybsresponsepics'  %>
+      <div class="carousel-caption">
+        <p>Household</p>
+      </div>
+    </div>
+  </div><!-- /.carousel-inner -->
+  <!--  Next and Previous controls below
+        href values must reference the id for this carousel -->
+    <a class="carousel-control left" href="#this-carousel-id" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
+</div><!-- /.carousel -->

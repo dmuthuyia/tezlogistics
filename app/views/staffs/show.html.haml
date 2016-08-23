@@ -1,0 +1,68 @@
+.divfold57 
+	.col-md-7
+		.fireplace2show
+			%h1= @staff.staff_name
+			%p.username
+			= image_tag @staff.staff_img.url
+			= link_to "Visit Link", @staff.url
+			%br
+			= link_to like_staff_path(@staff), method: :get, class: "data" do
+				%i.fa.fa-thumbs-o-up
+				= pluralize(@staff.get_upvotes.size, "like")
+			= link_to dislike_staff_path(@staff), method: :get, class: "data" do
+				%i.fa.fa-thumbs-o-down
+				= pluralize(@staff.get_downvotes.size, "Disike")
+			%p.data
+				%i.fa.fa-reviews-o
+				
+			%p
+				- if @staff.user == current_user
+					= link_to "Edit", edit_staff_path(@staff)
+					= link_to "Destroy", staff_path(@staff), method: :delete, data: { confirm: "staff will be deleted" }
+
+
+
+			%h1= @staff.staff_name 
+			Job title:
+			.divfold56
+				%p= @staff.job_title
+			Other duties:
+			.divfold56
+				%p= @staff.other_duties
+			Status:
+			%p 
+			.divfold56 
+				= @staff.status
+			%p
+			Employee since:
+			%p
+			.divfold56
+				= @staff.employee_since.strftime('%b, %d, %Y')
+			%p	
+
+			= pluralize(@staff.reviews.count, "review")
+			%br
+			- @reviews.each do |review|
+				= review.user.user_name
+				|
+				= review.content
+				|
+
+			= render 'reviews/form'
+		
+
+		
+
+
+	.col-md-3
+		.fireplace2showrandom
+		
+
+
+.divfold57 	
+	.col-md-7
+		.divfold56
+			= link_to "Contact us", new_contact_path
+	.col-md-3
+		.divfold56
+			= link_to "The rest of Our Staff", staffs_path

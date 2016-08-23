@@ -1,0 +1,21 @@
+.row
+	.divfold52
+		- @products.each do |product|
+			.col-md-3
+				.fireplace2
+					= link_to (image_tag product.product_img.url(:small))
+					%h3= link_to product.title, product
+					%hr
+						= product.comments.count
+						Comments
+					= product.get_likes.size
+					likes
+					|
+					= product.get_dislikes.size
+					Dislikes
+					%br
+					.divfold56 
+						From prices: ksh
+						= product.from_price
+
+				

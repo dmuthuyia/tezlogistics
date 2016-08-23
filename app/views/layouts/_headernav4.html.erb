@@ -1,0 +1,31 @@
+ <nav class="navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <%= link_to "Tez Logistics", root_path, class: "navbar-brand" %>
+      </div>
+      <ul class="navbar-nav nav navbar-right">
+        <% if user_signed_in? %>
+          <li><%= link_to t('Contact'), new_contact_path %></li>
+          <li><%= link_to current_user.user_name, edit_user_registration_path %></li>
+          <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%=link_to "Log in", new_user_session_path %></li>
+          <li><%= link_to "Sign up", new_user_registration_path %></li>
+        <% end %>
+      </ul>
+      <% if user_signed_in? %>
+        
+
+      <% end %>
+      <ul class="navbar-nav nav navbar-left">
+
+          <li><%= link_to "Our profile" %></li>
+          <li><%= link_to "Our Services", products_path %></li>
+          <li><%= link_to "Our Staff", staffs_path %></li>
+          <li><%= link_to "contact us", new_contact_path %></li>
+          <li><%= link_to "Call us" %></li>
+
+      </ul>
+
+    </div>
+  </nav>

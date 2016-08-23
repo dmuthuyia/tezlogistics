@@ -1,0 +1,53 @@
+#staff_show
+	%h1= @staff.staff_name
+	%p.username
+	= @staff.user.user_name
+	=time_ago_in_words(@staff.created_at)
+
+	.clearfix
+		.staff_image_description
+			= image_tag @staff.staff_img.url(:medium)
+			.description= simple_format(@staff.other_duties)
+		.staff_data
+			= link_to "Visit Link", @staff.url, class: "button"
+			= link_to like_staff_path(@staff), method: :get, class: "data" do
+				%i.fa.fa-thumbs-o-up
+				= pluralize(@staff.get_upvotes.size, "like")
+			= link_to dislike_staff_path(@staff), method: :get, class: "data" do
+				%i.fa.fa-thumbs-o-down
+				= pluralize(@staff.get_downvotes.size, "Disike")
+			%p.data
+				%i.fa.fa-reviews-o
+				=pluralize(@staff.reviews.count, "review")
+			- if @staff.user == current_user
+				= link_to "Edit", edit_staff_path(@staff)
+				= link_to "Destroy", staff_path(@staff), method: :delete, data: { confirm: "staff will be deleted" }
+
+		#random_staff
+			%h3 Random staff
+			.staff
+				.staff_image
+					= link_to (image_tag @random_staff.staff_img.url(:small)), staff_path(@random_staff)
+				.staff_content
+					.title
+						%h2= link_to @random_staff.staff_name, staff_path(@random_staff)
+					.data.clearfix
+						%p.username
+						staff added by
+						= @random_staff.user.user_name
+					%p.buttons
+						%span
+							%i.fa.fa-reviews-o
+							= @random_staff.reviews.count
+						%span
+							%i.fa.fa-thumbs-o-up
+							= @random_staff.get_likes.size
+
+#reviews
+	%h2.review_count= pluralize(@staff.reviews.count, "review")
+	- @reviews.each do |review|
+		.review
+			%p.username= review.user.user_name
+			%p.content= review.content
+
+	= render 'reviews/form'

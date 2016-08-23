@@ -1,0 +1,78 @@
+!!!
+%html
+%head
+	%title Tez
+	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+	= javascript_include_tag 'application', 'data-turbolinks-track' => true
+	= csrf_meta_tags
+
+	= javascript_include_tag 'jquery-1.11.3.min.js', 'data-turbolinks-track' => true
+
+
+	%link{:rel => "stylesheet", :href => "https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css"}
+	%link{:rel => "stylesheet", :href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"}
+
+
+	
+
+%body
+
+	= render 'layouts/headernav4'
+
+	= render 'layouts/denzbootstrapslider1'
+	= render 'layouts/fb'
+	
+
+
+	%p.notice= notice
+	%p.alert= alert
+
+	.container
+		.containerwrap
+			.col-md-10
+				= yield
+			%p
+			.col-md-2
+				.row
+					.divfold53
+						= social_share_button_tag("tez logistics")
+						%br
+						.button
+							%ul
+								%li= link_to "All categories", root_path
+								- Category.all.each do |category|
+									%li= link_to category.name, products_path(category: category.name)
+
+						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+						= render 'layouts/denzbootstrapslider1'
+				.row
+					.divfold54
+						There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
+	
+	.container	
+		.containerwrap
+			.col-md-6
+				.divfold55
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been theindustry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+					= link_to image_tag('handshake.jpg', size: "164x28", alt: "Edit Entry"), root_path, class: 'trybsresponsepics'
+
+			.col-md-6
+				.divfold55
+					= link_to image_tag('pizza.jpg', alt: "Edit Entry"), root_path, class: 'trybsresponsepics'
+
+	
+	.footer
+		.container
+			%ul.nav.navbar-nav.navbar-left
+				%li= link_to 
+
+				- if user_signed_in?
+					%li= link_to "Sign out", method: :delete
+				- else
+					%li= link_to "Log in", new_user_session_path
+					%li= link_to "Sign up", new_user_registration_path
+				
+
+			%ul.nav.navbar-nav.navbar-right
+				%li= link_to "copyright 2016 Tez logistics", root_path
+				%li= link_to "Site by: Infohtech ict Consultancy Agency", "http://www.infohtechict.com", target: :blank

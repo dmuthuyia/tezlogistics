@@ -1,0 +1,54 @@
+#staff_show
+	%h1= @staff.title
+	%p.username
+	= @staff.user.user_name
+	=time_ago_in_words(@staff.created_at)
+
+	.clearfix
+		.staff_image_description
+		 	= image_tag @staff.staff_img.url(:medium)
+			.description= simple_format(@staff.description)
+		.staff_data
+			= link_to "Visit Link", @staff.link, class: "button"
+			= link_to like_staff_path(@staff), method: :get, class: "data" do
+				%i.fa.fa-thumbs-o-up
+				= pluralize(@staff.get_upvotes.size, "like")
+			= link_to dislike_staff_path(@staff), method: :get, class: "data" do
+				%i.fa.fa-thumbs-o-down
+				= pluralize(@staff.get_downvotes.size, "Like")
+
+
+
+%h1= @staff.title 
+%p= @staff.url
+%p= @staff.description
+%p= @staff.from_price
+%p= @staff.to_price
+%p= @staff.user.user_name
+
+%p
+	= @staff.get_upvotes.size
+	Likes
+
+%p
+	= @staff.get_downvotes.size
+	Dislikes
+
+
+= link_to "Like", like_staff_path(@staff), method: :get
+= link_to "Dislike", dislike_staff_path(@staff), method: :get
+	%i.fa.fa-thumbs-o-down
+
+#review
+	%h2.review_count= pluralize(@staff.reviews.count, "review")
+	- @reviews.each do |review|
+		.review
+			%p.username= review.user.user_name
+			%p.content= review.content
+
+	= render 'reviews/form'
+
+= link_to "Home", root_path 
+= link_to "Edit", edit_staff_path(@staff)
+= link_to "Destroy", staff_path(@staff), method: :delete, data: { confirm: "staff will be deleted" }
+= link_to 'Log Out', destroy_user_session_path, method: :delete

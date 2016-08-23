@@ -1,0 +1,381 @@
+/*
+ *= require social-share-button
+ *= require_self
+ */
+
+@import 'bootstrap';
+@import 'bootstrap/theme';
+
+
+
+
+
+body {
+	font-family: "Proxima Nova";
+	font-weight: 100;
+	/*background-color: #faf0df;*/
+	background-color: #cec8f9;
+	height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 100;
+}
+
+.wrapper {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.clearfix:before, .clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.button {
+	border: 1px solid #9B9B9B;
+	padding: .7rem 1.25rem;
+	border-radius: .3rem;
+	outline: none;
+	background: white;
+	color: #9B9B9B;
+}
+
+header {
+	width: 100%;
+	padding: 2rem 0;
+	border-bottom: 1px solid #E4E4E4;
+	#logo {
+		float: left;
+		font-size: 1.75rem;
+		a {
+			color: #333233;
+			text-decoration: none;
+			&:hover {
+				color: #50A7C7;
+			}
+		}
+	}
+	nav {
+		float: right;
+		a {
+			margin-left: 1.5rem;
+			line-height: 2;
+			color: #9B9B9B;
+			text-decoration: none;
+			&:hover {
+				color: #50A7C7;
+			}
+		}
+	}
+}
+
+@import 'home.css.scss';
+@import 'post.css.scss';
+
+
+.trybsresponsepics {
+    background-color: white;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+    text-align: center;
+   top: 14px;
+    img { width: 100%;
+height: 20%;
+     }
+
+  }
+
+
+
+.divfold {
+	background-color: white;
+	overflow: hidden;
+}
+
+
+.divfold1 {
+	background-color: white;
+	width: 40%;
+	border-radius: 10px;
+}
+
+.divfold12 {
+	width: 100%;
+	
+	background-image: url("maasai3.png");
+}
+
+
+.divfoldbottomb 
+{
+   top: 0px;
+   margin:0px;  
+   padding: 0px 2px 2px 3px;    
+   border-width: 2px;
+   border-bottom-width:2px;
+   border-bottom-color: gray;
+   border-bottom-style: solid;
+   width: 100%;
+}
+
+.divfold50 {
+	width: 50%;
+	background-color: white;
+	overflow: hidden;
+	padding: 10px;
+	border-radius: 7px;
+}
+
+
+.fireplace2 {
+	height: 360px;
+	width: relative;
+	margin-bottom: 40px;
+	border-radius: 10px;
+	background-color: orange;
+	border-color: red;
+	border-width: 2px;
+	/*box-shadow: 10px 10px 5px #888888;*/
+	/* box-shadow: 10px 10px 5px #966403; */
+	padding-left:5px;
+	overflow: hidden;
+	 img { width: 100%;
+    height: 55%;}
+}
+
+.containerwrap {
+	/*background-color: #cec8f9;*/
+	background-color: #faf0df;
+	border-radius: 7px;
+	padding: 20px;
+	height: 80%;
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+
+
+.divfold52 {
+	padding: 20px;
+
+}
+
+.divfold53 {
+	background-color: #626364;
+	padding: 20px;
+	height: 100%;
+	overflow: hidden;
+
+}
+
+.divfold54 {
+	background-color: red;
+	padding: 20px;
+	height: 100%;
+
+}
+
+.divfold55 {
+	padding: 5px;
+	background-color: #e5e5e5;
+	border-radius: 5px;
+	height: 100;
+	overflow: hidden;
+	img { width: 100%;
+    height: 55%;}
+
+
+}
+
+.divfold56 {
+	padding: 5px;
+	width: 98%;
+	background-color: #c7d5ef;
+	border-radius: 5px;
+
+}
+
+
+.divfold57 {
+	padding: 5px;
+	padding-bottom: 20px;
+	overflow: hidden;
+}
+
+.tcol-md-2 {
+
+	background-color: #626364;
+	padding: 20px;
+	height: 100%;
+
+}
+
+
+.fireplace2show {
+	height: relative;
+	width: relative;
+	margin-bottom: 40px;
+	border-radius: 10px;
+	background-color: orange;
+	border-color: red;
+	border-width: 2px;
+	/*box-shadow: 10px 10px 5px #888888;*/
+	/* box-shadow: 10px 10px 5px #966403; */
+	padding: 20px;
+	overflow: hidden;
+	 img { width: 100%;
+    height: 55%;}
+}
+
+.fireplace2showst {
+	height: relative;
+	width: relative;
+	margin-bottom: 40px;
+	border-radius: 10px;
+	background-color: orange;
+	border-color: red;
+	border-width: 2px;
+	/*box-shadow: 10px 10px 5px #888888;*/
+	/* box-shadow: 10px 10px 5px #966403; */
+	padding: 20px;
+	overflow: hidden;
+	 img { width: 100%;
+    height: 55%;}
+}
+
+.fireplace2showstaff {
+	height: relative;
+	width: relative;
+	margin-bottom: 40px;
+	border-radius: 10px;
+	background-color: white;
+	border-color: red;
+	border-width: 2px;
+	/*box-shadow: 10px 10px 5px #888888;*/
+	/* box-shadow: 10px 10px 5px #966403; */
+	padding: 20px;
+	overflow: hidden;
+	 img { width: 100%;
+    height: 55%;}
+}
+
+.fireplace2showrandom {
+	height: relative;
+	width: relative;
+	margin-bottom: 40px;
+	border-radius: 10px;
+	background-color: orange;
+	border-color: red;
+	border-width: 2px;
+	/*box-shadow: 10px 10px 5px #888888;*/
+	/* box-shadow: 10px 10px 5px #966403; */
+	padding: 20px;
+	overflow: hidden;
+	 img { width: 100%;
+    height: 55%;}
+}
+
+.fireplace2showrandomstaff {
+	height: relative;
+	width: relative;
+	margin-bottom: 40px;
+	border-radius: 10px;
+	background-color: white;
+	border-color: red;
+	border-width: 2px;
+	/*box-shadow: 10px 10px 5px #888888;*/
+	/* box-shadow: 10px 10px 5px #966403; */
+	padding: 20px;
+	overflow: hidden;
+	 img { width: 100%;
+    height: 55%;}
+}
+
+
+@import 'owl.carousel';
+@import 'owl.theme';
+@import 'owl.transitions';
+
+
+
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+color: red;  /*Sets the text hover color on navbar*/
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >   
+ a:hover, .navbar-default .navbar-nav > .active > a:focus {
+color: orange; /*BACKGROUND color for active*/
+background-color: orange;
+}
+
+  .navbar-default {
+    background-color: orange;
+    border-color: #030033;
+     background-image: none;
+  /*background-repeat: no-repeat;*/
+ /* width: 100%;*/
+ 
+}
+
+  .dropdown-menu > li > a:hover,
+   .dropdown-menu > li > a:focus {
+    color: #262626;
+   text-decoration: none;
+  background-color: #66CCFF;  /*change color of links in drop down here*/
+   }
+
+ .nav > li > a:hover,
+ .nav > li > a:focus {
+    text-decoration: none;
+    background-color: gray; /*Change rollover cell color here*/
+    color: white;
+  }
+
+
+  .navbar-default .navbar-nav > li > a {
+   color: purple; /*Change active text color here*/
+    }
+
+
+
+ .navbar-brand {
+ 	
+ 	color: white !important;
+ 	font-size: 24;
+
+a {
+    color: hotpink;
+}
+
+ }
+
+ .footer
+{
+position: relative;
+margin-top: -20px; /* negative value of footer height */
+height: relative;
+clear:both;
+padding-top:20px;
+background-color:orange;
+overflow: hidden;
+}
+
+/*.social-share-button-facebook {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background: url("/social/facebook.png") no-repeat;
+}
+*/
+
+

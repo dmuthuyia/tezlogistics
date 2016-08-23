@@ -1,0 +1,78 @@
+.divfold57 
+	.col-md-7
+		.fireplace2show
+			%h1= @product.title
+			%p.username
+			= image_tag @product.product_img.url
+			= simple_format(@product.description)
+			= link_to "Visit Link", @product.url
+			%br
+			= link_to like_product_path(@product), method: :get, class: "data" do
+				%i.fa.fa-thumbs-o-up
+				= pluralize(@product.get_upvotes.size, "like")
+			= link_to dislike_product_path(@product), method: :get, class: "data" do
+				%i.fa.fa-thumbs-o-down
+				= pluralize(@product.get_downvotes.size, "Disike")
+			%p.data
+				%i.fa.fa-comments-o
+				
+			%p
+				- if @product.user == current_user
+					= link_to "Edit", edit_product_path(@product)
+					= link_to "Destroy", product_path(@product), method: :delete, data: { confirm: "Product will be deleted" }
+
+
+
+			%h1= @product.title 
+			Description:
+			.divfold56
+				%p= @product.description
+			From prices:
+			%p 
+			.divfold56 
+				ksh
+				= @product.from_price
+			%p
+			To prices:
+			%p
+			.divfold56
+				Ksh 
+				= @product.to_price
+			%p	
+
+			= pluralize(@product.comments.count, "Comment")
+			%br
+			- @comments.each do |comment|
+				= comment.user.user_name
+				|
+				= comment.content
+				|
+
+			= render 'comments/form'
+		
+
+		
+
+
+	.col-md-3
+		.fireplace2showrandom
+			%h3 You can also try this service wth us
+
+			= link_to (image_tag @random_product.product_img.url), product_path(@random_product)
+					
+			%h2= link_to @random_product.title, product_path(@random_product)
+			%span
+				%i.fa.fa-comments-o
+				= @random_product.comments.count
+			%span
+				%i.fa.fa-thumbs-o-up
+				= @random_product.get_likes.size
+
+
+.divfold57 	
+	.col-md-7
+		.divfold56
+			= link_to "Contact us", new_contact_path
+	.col-md-3
+		.divfold56
+			= link_to "See Our Staff", staffs_path

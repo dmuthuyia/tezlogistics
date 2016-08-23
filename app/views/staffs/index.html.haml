@@ -1,0 +1,22 @@
+.row
+	.divfold52
+		- @staffs.each do |staff|
+			.col-md-3
+				.fireplace2
+					= link_to (image_tag staff.staff_img.url(:small))
+					%h2= link_to staff.staff_name, staff
+					%P
+						= staff.reviews.count
+						Review
+
+					%p
+					= staff.get_likes.size
+					likes
+					|
+					= staff.get_dislikes.size
+					Dislikes
+					%br
+					.divfold56 
+						= staff.status
+
+	

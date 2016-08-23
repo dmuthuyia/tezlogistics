@@ -1,0 +1,17 @@
+!!! 5
+%html
+%head
+
+%body
+	%nav.navbar.navbar-inverse
+		.container
+			.navbar-brand= link_to "Tez Logistics", root_path
+
+			- if user_signed_in?
+				%ul.nav.navbar-nav.navbar-left
+					%li= link_to current_user.user_name, edit_user_registration_path
+					%li= link_to "Sign out", destroy_user_session_path, method: :delete
+			- else
+				%ul.nav.navbar-nav.navbar-left
+					= link_to "Sign in", new_user_session_path
+					= link_to "Sign up", new_user_registration_path, class: "button"

@@ -1,0 +1,54 @@
+#product_show
+	%h1= @product.title
+	%p.username
+	= @product.user.user_name
+	=time_ago_in_words(@product.created_at)
+
+	.clearfix
+		.product_image_description
+		 	= image_tag @product.product_img.url(:medium)
+			.description= simple_format(@product.description)
+		.product_data
+			= link_to "Visit Link", @product.link, class: "button"
+			= link_to like_product_path(@product), method: :get, class: "data" do
+				%i.fa.fa-thumbs-o-up
+				= pluralize(@product.get_upvotes.size, "like")
+			= link_to dislike_product_path(@product), method: :get, class: "data" do
+				%i.fa.fa-thumbs-o-down
+				= pluralize(@product.get_downvotes.size, "Like")
+
+
+
+%h1= @product.title 
+%p= @product.url
+%p= @product.description
+%p= @product.from_price
+%p= @product.to_price
+%p= @product.user.user_name
+
+%p
+	= @product.get_upvotes.size
+	Likes
+
+%p
+	= @product.get_downvotes.size
+	Dislikes
+
+
+= link_to "Like", like_product_path(@product), method: :get
+= link_to "Dislike", dislike_product_path(@product), method: :get
+	%i.fa.fa-thumbs-o-down
+
+#comment
+	%h2.comment_count= pluralize(@product.comments.count, "Comment")
+	- @comments.each do |comment|
+		.comment
+			%p.username= comment.user.user_name
+			%p.content= comment.content
+
+	= render 'comments/form'
+
+= link_to "Home", root_path 
+= link_to "Edit", edit_product_path(@product)
+= link_to "Destroy", product_path(@product), method: :delete, data: { confirm: "Product will be deleted" }
+= link_to 'Log Out', destroy_user_session_path, method: :delete

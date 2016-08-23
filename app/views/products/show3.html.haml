@@ -1,0 +1,58 @@
+.col-md-7
+	.fireplace2show
+
+		#product_show
+			%h1= @product.title
+			%p.username
+			= @product.user.user_name
+			=time_ago_in_words(@product.created_at)
+
+			.clearfix
+				.product_image_description
+					= image_tag @product.product_img.url
+					.description= simple_format(@product.description)
+				.product_data
+					= link_to "Visit Link", @product.url, class: "button"
+					= link_to like_product_path(@product), method: :get, class: "data" do
+						%i.fa.fa-thumbs-o-up
+						= pluralize(@product.get_upvotes.size, "like")
+					= link_to dislike_product_path(@product), method: :get, class: "data" do
+						%i.fa.fa-thumbs-o-down
+						= pluralize(@product.get_downvotes.size, "Disike")
+					%p.data
+						%i.fa.fa-comments-o
+						=pluralize(@product.comments.count, "Comment")
+					- if @product.user == current_user
+						= link_to "Edit", edit_product_path(@product)
+						= link_to "Destroy", product_path(@product), method: :delete, data: { confirm: "Product will be deleted" }
+
+		#comments
+			%h2.comment_count= pluralize(@product.comments.count, "Comment")
+			- @comments.each do |comment|
+				.comment
+					%p.username= comment.user.user_name
+					%p.content= comment.content
+
+			= render 'comments/form'
+
+.col-md-3
+
+	#random_product
+		%h3 Random product
+		.product
+			.product_image
+				= link_to (image_tag @random_product.product_img.url), product_path(@random_product)
+			.product_content
+				.title
+					%h2= link_to @random_product.title, product_path(@random_product)
+				.data.clearfix
+					%p.username
+					Product added by
+					= @random_product.user.user_name
+				%p.buttons
+					%span
+						%i.fa.fa-comments-o
+						= @random_product.comments.count
+					%span
+						%i.fa.fa-thumbs-o-up
+						= @random_product.get_likes.size

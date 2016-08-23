@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  staff_id: 1
+  job_title: MyString
+  other_duties: MyText
+  url: MyString
+  status: MyString
+  employee_since: 2016-08-14 12:57:42
+  employee_until: 2016-08-14 12:57:42
+
+two:
+  staff_id: 1
+  job_title: MyString
+  other_duties: MyText
+  url: MyString
+  status: MyString
+  employee_since: 2016-08-14 12:57:42
+  employee_until: 2016-08-14 12:57:42

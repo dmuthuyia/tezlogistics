@@ -1,0 +1,11 @@
+= simple_form_for @product do |f|
+	= f.input :title
+	= f.collection_select :category_id, Category.all, :id, :name, { prompt: "Select a Category" }
+	%p
+	= f.input :url
+	= f.input :description
+	= f.input :from_price
+	= f.input :to_price
+	= f.input :product_img
+
+	= f.button :submit
