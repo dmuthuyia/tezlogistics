@@ -1,14 +1,14 @@
 class User < ActiveRecord::Base
   rolify
 	has_many :products
-	has_many :comments
+	has_many :comments, through: :products
 
   devise :omniauthable, :omniauth_providers => [:digitalocean]
   devise :omniauthable, :omniauth_providers => [:facebook]
   #devise :omniauthable, :omniauth_providers => :facebook
 
 	has_many :staffs
-	has_many :reviews
+	has_many :reviews, through: :staffs
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
