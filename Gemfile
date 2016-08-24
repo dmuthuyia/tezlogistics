@@ -53,6 +53,9 @@ gem 'certified', '~> 1.0.0'
 gem 'social-share-button', '~> 0.1.6'
 gem "activerecord-postgresql-adapter"
 
+config.gem "rmagick",
+:lib => "RMagick" 
+
 
 #&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 # Development (Optional) {
